@@ -3,9 +3,21 @@
 </template>
 
 <script>
+import hourglassImg from '../assets/hourglass.gif';
+
 export default {
   name: "HomeView",
   components: {},
+  data() {
+    return {
+      loading: true,
+      title: 'Global',
+      dataDate: '',
+      stats: {},
+      countries: [],
+      loadingImage: hourglassImg
+    }
+  },
   methods: {
     async fetchCovidData(){
       const res = await fetch('https://api.covid19api.com/summary')
@@ -16,7 +28,10 @@ export default {
   async created() {
     //created is a lifecycle method in vuejs that runs before the app is been mounted
     const data = await this.fetchCovidData()
-    console.log(data)
+    
+    //after fetching the data push or assign it to the following
+    this.dataDate = data.Date
+    console.log(this.dataDate)
   },
 };
 </script>
