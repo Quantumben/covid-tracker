@@ -20,7 +20,7 @@
       where we are binding the following
       :countries binding title from data object defined below
     -->
-    <CountrySelect :countries="countries" />
+    <CountrySelect @get-country="getCountryData" :countries="countries" />
   </main>
 
   <main class="flex flex-col align-center justify-center text-center" v-else>
@@ -63,6 +63,10 @@ export default {
       const data = await res.json();
       return data;
     },
+    getCountryData(country){
+      this.stats = country
+      this.title = country.Country
+    }
   },
   async created() {
     //created is a lifecycle method in vuejs that runs before the app is been mounted
