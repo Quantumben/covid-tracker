@@ -1,28 +1,34 @@
 <template>
   <main class="main" v-if="!loading">
-      Show Data
+    <!-- 
+      This where we are using our defined components
+      where we are binding the following
+      :title binding title from data object defined below
+      :dataDate binding dataDate from data object defined below
+    -->
+    <DataTitle :title="title" :dataDate="dataDate" />
   </main>
 
   <main class="flex flex-col align-center justify-center text-center" v-else>
-    <div class="text-gray-500 text-3xl mt-10 mb-6">
-        Fetching Data
-    </div>
+    <div class="text-gray-500 text-3xl mt-10 mb-6">Fetching Data</div>
 
     <!--
       we are binding the loading image here with :src
     
     -->
-    <img :src="loadingImage" class="w-24 m-auto" alt="">
-
+    <img :src="loadingImage" class="w-24 m-auto" alt="" />
   </main>
 </template>
 
 <script>
 import hourglassImg from "../assets/hourglass.gif";
+import DataTitle from "@/components/DataTitle.vue";
 
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    DataTitle,
+  },
   data() {
     return {
       loading: true,
