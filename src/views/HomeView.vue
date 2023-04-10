@@ -7,6 +7,14 @@
       :dataDate binding dataDate from data object defined below
     -->
     <DataTitle :title="title" :dataDate="dataDate" />
+
+
+     <!-- 
+      This where we are using our defined components
+      where we are binding the following
+      :stats binding title from data object defined below
+    -->
+    <DataBoxes :stats="stats" />
   </main>
 
   <main class="flex flex-col align-center justify-center text-center" v-else>
@@ -23,11 +31,13 @@
 <script>
 import hourglassImg from "../assets/hourglass.gif";
 import DataTitle from "@/components/DataTitle.vue";
+import DataBoxes from "@/components/DataBoxes.vue";
 
 export default {
   name: "HomeView",
   components: {
     DataTitle,
+    DataBoxes,
   },
   data() {
     return {
