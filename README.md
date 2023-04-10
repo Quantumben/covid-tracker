@@ -1,6 +1,7 @@
 # covid-tracker
 
-All thanks to @TravesyMedia
+
+All thanks to [TraversyMedia](https://github.com/bradtraversy) 
 
 ## Project Setup
 
