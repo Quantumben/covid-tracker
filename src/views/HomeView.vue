@@ -8,13 +8,19 @@
     -->
     <DataTitle :title="title" :dataDate="dataDate" />
 
-
-     <!-- 
+    <!-- 
       This where we are using our defined components
       where we are binding the following
       :stats binding title from data object defined below
     -->
     <DataBoxes :stats="stats" />
+
+    <!-- 
+      This where we are using our defined components
+      where we are binding the following
+      :countries binding title from data object defined below
+    -->
+    <CountrySelect :countries="countries" />
   </main>
 
   <main class="flex flex-col align-center justify-center text-center" v-else>
@@ -32,12 +38,14 @@
 import hourglassImg from "../assets/hourglass.gif";
 import DataTitle from "@/components/DataTitle.vue";
 import DataBoxes from "@/components/DataBoxes.vue";
+import CountrySelect from "@/components/CountrySelect.vue";
 
 export default {
   name: "HomeView",
   components: {
     DataTitle,
     DataBoxes,
+    CountrySelect,
   },
   data() {
     return {
